@@ -16,9 +16,9 @@ public class SpringbootDemoApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringbootDemoApplication.class, args);
-        ProdukDao bean = context.getBean(ProdukDao.class);
-        Produk produk1 = bean.findById("produk-001");
-        System.out.println(produk1.toString());
+//        ProdukDao bean = context.getBean(ProdukDao.class);
+//        Produk produk1 = bean.findById("produk-001");
+//        System.out.println(produk1.toString());
     }
 
     @Bean
