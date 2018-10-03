@@ -6,10 +6,7 @@ import com.tabeldata.training.springbootdemo.entity.Produk;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,4 +34,26 @@ public class CustomerController {
     public List<Customer> findAll(){
         return dao.findAll();
     }
+
+    // Service for save new produk
+    @PostMapping("/save")
+    public ResponseEntity<Customer> save(@RequestBody Customer cs){
+        cs = this.dao.save(cs);
+        return ResponseEntity.ok(cs);
+    }
+
+    // Service for update produk
+    @PutMapping("/update")
+    public ResponseEntity<Customer> update(@RequestBody Customer cs){
+        cs = this.dao.update(cs);
+        return ResponseEntity.ok(cs);
+    }
+
+    //   Service for Delete
+    @DeleteMapping("/{kode}")
+    public ResponseEntity<Customer> delete(@PathVariable("kode") String kode){
+        this.dao.deleteById(kode);
+        return ResponseEntity.ok().build();
+    }
+
 }

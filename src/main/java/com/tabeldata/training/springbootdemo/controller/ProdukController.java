@@ -48,7 +48,8 @@ public class ProdukController {
         return ResponseEntity.ok(produk);
     }
 
-//    Service for delete produk by Id
+//   Service for Delete
+    @DeleteMapping("/{kode}")
     public ResponseEntity<Produk> delete(@PathVariable("kode") String kode){
         this.dao.deleteById(kode);
         return ResponseEntity.ok().build();
