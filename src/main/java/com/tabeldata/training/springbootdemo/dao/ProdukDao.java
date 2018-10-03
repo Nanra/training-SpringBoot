@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 package com.tabeldata.training.springbootdemo.dao;
 
-public class ProdukDao {
-=======
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.tabeldata.training.springbootdemo.dao;
+import org.springframework.jdbc.core.JdbcTemplate;
+
 
 import com.tabeldata.training.springbootdemo.entity.Produk;
 import java.math.BigDecimal;
@@ -51,5 +44,4 @@ public class ProdukDao {
     }
    
     
->>>>>>> 85073699bdcb1521b51b97743f5954a82cf7f6ab
 }
