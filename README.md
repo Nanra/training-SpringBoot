@@ -26,7 +26,7 @@ mysql -h 127.0.0.1 -u bootcamp -p
 use bootcamp;
 
 ## import sql file to database bootcamp
-source schema_database.sql
+source schema_database.sql;
 
 ## check tables
 show tables;
