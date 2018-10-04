@@ -2,7 +2,6 @@ package com.tabeldata.training.springbootdemo.controller;
 
 import com.tabeldata.training.springbootdemo.dao.CustomerDao;
 import com.tabeldata.training.springbootdemo.entity.Customer;
-import com.tabeldata.training.springbootdemo.entity.Produk;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/customer")
+@RestController // Spring Annotation
+@RequestMapping("/api/customer") // Spring Annotation
 public class CustomerController {
 
     @Autowired
@@ -30,7 +29,7 @@ public class CustomerController {
     }
 
     // Service for view all produk
-    @GetMapping(path = {"/list", "/"}) // Dua URL address satu target pakai path
+    @GetMapping(path = {"/list", "/"}) // Dua URL address satu target pakai args path
     public List<Customer> findAll(){
         return dao.findAll();
     }
@@ -49,7 +48,7 @@ public class CustomerController {
         return ResponseEntity.ok(cs);
     }
 
-    //   Service for Delete
+    //  Service for Delete
     @DeleteMapping("/{kode}")
     public ResponseEntity<Customer> delete(@PathVariable("kode") String kode){
         this.dao.deleteById(kode);
